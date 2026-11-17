@@ -1,4 +1,4 @@
-var pet_info = {name: "Buddy", weight: 10, happiness: 5};
+var pet_info = {name: "Alfred", weight: 10, happiness: 5};
 var sleepImageTimeout = null;
 
 $(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
@@ -11,6 +11,10 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   $('.exercise-button').click(clickedExerciseButton);
   $('.sleep-button').click(clickedSleepButton);
 
+// The .hover() method accepts two functions.
+// The first runs when the mouse enters the pet image.
+// The second runs when the mouse leaves the pet image.
+// This makes the lion grow when someone hovers over it.
   $('.pet-image').hover(
     function() {
       $(this).addClass('pet-happy');
@@ -97,6 +101,9 @@ function showPetMessage(message) {
 }
 
 function showHeart() {
+// The .clone() method creates a copy of the original heart image.
+// We use it to create a new heart every time the pet receives
+// a treat or plays, without changing the original template.
   var newHeart = $('.heart-template').clone();
   newHeart.removeClass('heart-template');
   newHeart.addClass('floating-heart');
